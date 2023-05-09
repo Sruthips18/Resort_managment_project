@@ -1,0 +1,38 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+    <center><h3> View Users </h3></center>
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+
+        <th scope="col">NAME</th>
+        <th scope="col">ADDRESS</th>
+        <th scope="col">COUNTRY</th>
+         <th scope="col">GENDER</th>
+        <th scope="col">PHONE</th>
+         <th scope="col">ID PROOF</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">&nbsp;NATIONALITY</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>&nbsp;{{i.firstname}} {{i.lastname}}</td>
+        <td>&nbsp;{{i.place}},{{i.street}},{{i.city}},{{i.pincode}},{{i.state}}</td>
+        <td>&nbsp;{{i.country}}</td>
+        <td>{{i.gender}}</td>
+        <td>&nbsp;{{i.phone}}</td>
+        <td>&nbsp;<img src="{{i.idproof.url}}" width="100" height="100"></td>
+        <td>{{i.email}}</td>
+        <td>{{i.nationality}}</td>
+      </tr>
+      {% endfor %}
+      </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

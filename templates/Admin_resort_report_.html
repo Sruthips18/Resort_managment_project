@@ -1,0 +1,66 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="search_month_report">
+    <center><h4>Report of Resorts </h4></center>
+  <div align="center">
+    <table width="100" border="1" id="customers">
+      <tr>
+        <th scope="row">MONTH</th>
+        <th><label>
+          <select name="select">
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+
+          <input type="submit" name="Submit" value="SEARCH" />
+      <tr>
+        <th scope="col"> Total no.of bookings </th>
+        <td scope="col">&nbsp;{{val}}</td>
+      </tr>
+       <tr>
+        <th scope="col">No.of Events </th>
+        <td scope="col">&nbsp;{{val1}}</td>
+      </tr>
+       <tr>
+        <th scope="col">No.of packages </th>
+        <td scope="col">{{val2}}</td>
+      </tr>
+       <tr>
+        <th scope="col"> No.of facilities </th>
+        <td scope="col">{{val3}}</td>
+      </tr>
+       <tr>
+        <th scope="col">Total No.of Employees </th>
+        <td scope="col">&nbsp;{{val5}}</td>
+      </tr>
+       <tr>
+        <th scope="col">Total No.of Cottages</th>
+        <td scope="col">&nbsp;{{val6}}</td>
+      </tr>
+       <tr>
+        <th scope="col">Total No.of Rooms </th>
+        <td scope="col">&nbsp;{{val7}}</td>
+      </tr>
+        <tr>
+        <th scope="col">No.of Food </th>
+        <td scope="col">&nbsp;{{val8}}</td>
+      </tr>
+
+    </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

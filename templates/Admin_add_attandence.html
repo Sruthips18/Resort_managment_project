@@ -1,0 +1,41 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="add_attendance">
+    <center><h4>ADD ATTENDANCE</h4></center>
+
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col"><label>
+          <input type="date" name="date" value="{{date}}" required/>
+        </label></th>
+        <th scope="col"><label>
+          <input type="submit" name="Submit" value="Search" />
+        </label></th>
+      </tr>
+      <tr>
+        <td colspan="3"><center>Employee Name </center></td>
+      </tr>
+      {% for i in v %}
+      <tr>
+        <td>&nbsp;<center>{{i.firstname}} {{i.lastname}}</center></td>
+        <td colspan="2"><label><center>
+          <input type="checkbox" name="checks[]" value="{{i.loginid.id}}" /></center>
+        </label></td>
+      </tr>
+      {% endfor %}
+      </table>
+    <label>
+      <br>
+      <br>
+    <input type="submit" name="Submit" value="Submit" class="btn btn-primary"/>
+    </label>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

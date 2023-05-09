@@ -1,0 +1,41 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'search_room_status' %}">
+  <br>
+
+  <center><h4> Update room availability </h4></center>
+  <br>
+  <div align="center">
+    <table width="200" border="1" id="customers">
+
+        <th scope="row">Vaccating Dates </th>
+         <th scope="col"> <input type="date" name="textfield" value="{{date}}" required/>
+        <th scope="col" colspan="3"><label>
+          <input type="submit" name="Submit" value="Search" />
+        </label></th>
+      </tr>
+      <tr>
+        <th scope="col">USERS </th>
+                   <th scope="col" >ROOM NUMBER </th>
+
+        <th >UPDATE STATUS</th>
+      </tr>
+        {% for i in v %}
+        {% if i.room_id.status == 'un-available' %}
+      <tr>
+        <td>&nbsp;{{i.user_id.firstname}} {{i.user_id.lastname}}</td>
+        <td>&nbsp;{{i.room_id.room_number}}</td>
+         {% if i.date_vaccate|date:"Y-m-d" == cdt %}<td><a href="{% url 'available_status' i.room_id.id %}" class="btn btn-success">Available</a></td>{% else %}
+          <td>Update on {{i.date_vaccate}}</td>{% endif %}
+      </tr>
+        {% endif %}
+        {% endfor %}
+      </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

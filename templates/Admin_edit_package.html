@@ -1,0 +1,56 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'updte_package' %}" enctype="multipart/form-data">
+    <center><h4>Edit Packages details</h4></center>
+
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+        <th scope="row">PACKAGE NAME </th>
+        <td><label>
+          <input type="text" name="textfield" value="{{val.pack_name}}" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">PHOTO </th>
+        <td><label>
+          <input type="file" name="file" /><img src="{{val.photo.url}}" height="100" width="100"/>
+        </label></td>
+      </tr>
+
+      <tr>
+        <th scope="row">RATE</th>
+        <td><label>
+          <input type="text" name="textfield2" value="{{val.rate}}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">DESCRIPTION</th>
+        <td><label>
+          <textarea name="textarea">{{val.description}}</textarea>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">START DATE </th>
+        <td><label>
+          <input type="date" name="textfield3" required min="{{cdt}}"/>
+        </label></td>
+      </tr>
+       <tr>
+        <th scope="row">END DATE </th>
+        <td><label>
+          <input type="date" name="textfield4" required/>
+        </label></td>
+      </tr>
+      <tr>
+        <td colspan="2" scope="row"><label>
+          <input type="submit" name="Submit" value="Update" class="btn btn-primary" />
+        </label></td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

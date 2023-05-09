@@ -1,0 +1,32 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+      <center><h4> View Events & Book</h4></center>
+
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+           <th scope="col">PHOTO</th>
+        <th scope="col">EVENT NAME </th>
+        <th scope="col">DESCRIPTION</th>
+
+        <th scope="col">&nbsp;RATE</th>
+        <th> </th>
+      </tr>
+      {% for i in val %}
+      <tr>
+         <td><img src="{{i.photo.url}}" height="200" width="200"/></td>
+        <td>{{i.event_name}}</td>
+        <td>&nbsp;{{i.eve_desc}}</td>
+        <td>&nbsp;{{i.rate}}</td>
+        <td><a href="{% url 'book_events' id=i.id %}" class="btn btn-success">BOOK</a></td>
+      </tr>
+      {% endfor %}
+      </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

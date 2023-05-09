@@ -1,0 +1,59 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'us_rooms_payment' %}">
+      <center><h4>Payments </h4></center>
+
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+        <th scope="row">Bank</th>
+        <td><label>
+          <select name="select">
+            <option>Canara Bank</option>
+            <option>ICIC</option>
+            <option>SBI</option>
+            <option>Axis</option>
+            <option>HDFC</option>
+            <option>Kerala Gramin Bank</option>
+            <option>Indian Overseas Bank</option>
+            <option>Federal Bank</option>
+            <option>Bank of Baroda</option>
+            <option>Punjab National Bank</option>
+            <option>Co-operative Bank</option>
+          </select>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">IFSC Code </th>
+        <td><label>
+          <input type="text" name="textfield" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">CVV Code/pin </th>
+        <td><label>
+          <input type="text" name="textfield2" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">Account Number </th>
+        <td><label>
+        <input type="text" name="textfield3" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">Amount</th>
+        <td>&nbsp;{{tot}}/-</td>
+      </tr>
+
+      </table>
+  </div>
+  <br>
+   <div align="center">
+          <input type="submit" name="Submit" value="Pay" class="btn btn-danger" />
+   </div>
+</form>
+</body>
+</html>
+{% endblock %}

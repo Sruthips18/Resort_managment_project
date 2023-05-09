@@ -1,0 +1,39 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="add_fac">
+  <center><h4>Add New Facilities</h4></center>
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+        <th>FACILITY NAME </th>
+        <td><label>
+          <input type="text" name="textfield" required/>
+        </label></td>
+      </tr>
+      <tr>
+        <th>FACILITY DESCRIPTION </th>
+        <td><label>
+          <textarea name="textarea" required></textarea>
+        </label></td>
+      </tr>
+      <tr>
+        <th>RATE</th>
+        <td><label>
+          <input type="text" name="textfield2"required />
+        </label></td>
+      </tr>
+      
+      <tr>
+        <td>&nbsp;</td>
+        <td><label>
+          <input type="submit" name="Submit" value="ADD" class="btn btn-primary"/>
+        </label></td>
+      </tr>
+      </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

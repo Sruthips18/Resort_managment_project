@@ -1,0 +1,118 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+
+<body>
+<form action="user_reg" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <br>
+      <center><h4> User Registraction Form</h4></center>
+
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+        <th colspan="2" scope="row">NATIONALITY
+          <label>
+          <br/>
+          <input name="radiobutton" type="radio" value="Indian" checked />
+        Indian
+        <input name="radiobutton" type="radio" value="Others" />
+        Others</label></th>
+      </tr>
+      <tr>
+        <th scope="row">FIRST NAME </th>
+        <td><label>
+          <input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">LAST NAME  </th>
+        <td><label>
+          <input type="text" name="textfield2" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">HOUSE NAME</th>
+        <td><label>
+          <input type="text" name="textfield3" required pattern="[A-Z a-z.]{3,25}" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">STREET</th>
+        <td><label>
+          <input type="text" name="textfield4" required pattern="[A-Z a-z.]{3,25}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">CITY</th>
+        <td><label>
+          <input type="text" name="textfield5" required pattern="[A-Z a-z.]{3,25}" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">ZIP/POSTAL CODE </th>
+        <td><label>
+          <input type="text" name="textfield6" required pattern="[0-9]{6}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">STATE/ PROVINCE/ REGION </th>
+        <td><label>
+          <input type="text" name="textfield7" required pattern="[A-Z a-z.]{3,25}" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">COUNTRY</th>
+        <td><label>
+          <input type="text" name="textfield8" required pattern="[A-Z a-z.]{3,25}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">GENDER</th>
+        <td><label>
+          <input name="radiobutton" type="radio" value="Male" CHECKED/>
+        Male
+        <input name="radiobutton" type="radio" value="Female" />
+        Female
+        <input name="radiobutton" type="radio" value="Transgenders" />
+        Transgenders</label></td>
+      </tr>
+      <tr>
+        <th scope="row">PHONE</th>
+        <td><label>
+          <input type="text" name="textfield9" required pattern="[6789][0-9]{9}" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">ID PROOF </th>
+        <td><label>
+        <input type="file" name="file" required/>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">EMAIL</th>
+        <td><label>
+          <input type="text" name="textfield11" required pattern="[a-z0-9]+@[a-z0-9]+\.[a-z]{2,3}" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">USERNAME</th>
+        <td><label>
+          <input type="text" name="textfield12"  required />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">PASSWORD</th>
+        <td><label>
+          <input type="text" name="textfield13" id="textfield13"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
+        </label></td>
+      </tr>
+      <tr>
+        <td colspan="2" scope="row"><label>
+          <input type="submit" name="Submit" value="REGISTER" class="btn btn-primary" />
+        </label></td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

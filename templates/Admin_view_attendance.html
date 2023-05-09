@@ -1,0 +1,61 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="search_attendance">
+      <center><h4>VIEW & MARK ATTENDANCE</h4></center>
+
+  <div align="center">
+    <table width="200" border="1" id="customers">
+       <tr>
+        <th colspan="2">MONTH</th>
+        <th><label>
+          <select name="select">
+           <option value="1" {% if mnth == 1 %}selected{% endif %}>January</option>
+            <option value="2" {% if mnth == 2 %}selected{% endif %}>February</option>
+            <option value="3" {% if mnth == 3 %}selected{% endif %}>March</option>
+            <option value="4" {% if mnth == 4 %}selected{% endif %}>April</option>
+            <option value="5" {% if mnth == 5 %}selected{% endif %}>May</option>
+            <option value="6" {% if mnth == 6 %}selected{% endif %}>June</option>
+            <option value="7" {% if mnth == 7 %}selected{% endif %}>July</option>
+            <option value="8" {% if mnth == 8 %}selected{% endif %}>August</option>
+            <option value="9" {% if mnth == 9 %}selected{% endif %}>September</option>
+            <option value="10" {% if mnth == 10 %}selected{% endif %}>October</option>
+            <option value="11" {% if mnth == 11 %}selected{% endif %}>November</option>
+            <option value="12" {% if mnth == 12 %}selected{% endif %}>December</option>
+          </select>
+        </label></th>
+        <th colspan="2"><label>
+           <input type="submit" name="Submit" value="SEARCH"  />
+        </label></th>
+      </tr>
+      <tr>
+        <th scope="col">Employees Name </th>
+        <th scope="col">Total Working Days </th>
+        <th scope="col">Number Of Days Present </th>
+        <th scope="col">Attendance(%) </th>
+      </tr>
+        {% for i in val %}
+
+      <tr>
+        <td>&nbsp;{{i.employee_id__firstname}} {{i.employee_id__lastname}}</td>
+        <td>&nbsp;{{v}}</td>
+        <td>&nbsp;{{i.total}}</td>
+          <td>&nbsp;{{i.p}}</td>
+      </tr>
+
+
+        {% endfor %}
+      </table>
+      <br>
+      <br>
+  </div>
+    <div align="center">
+                  <input type="submit" name="Submit" value="MARK ATTENDANCE" class="btn btn-primary"/>
+
+    </div>
+</form>
+</body>
+</html>
+{% endblock %}

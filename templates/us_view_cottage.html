@@ -1,0 +1,31 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="addbutton">
+      <center><h4>Manage Cottage </h4></center>
+
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+        <th scope="col">Cottage Number </th>
+        <th scope="col">Cottage Details </th>
+        <th scope="col">Number of Rooms </th>
+        <th scope="col"><p>Cottage</p>
+        <p>Facilities</p></th>
+        <th></th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{i.cottage_num}}</td>
+        <td>&nbsp;{{i.cottage_details}}</td>
+        <td>&nbsp;{{i.number_rooms}}</td>
+        <td>{{i.cottage_facility}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+</form>
+</body>
+</html>
+{% endblock %}

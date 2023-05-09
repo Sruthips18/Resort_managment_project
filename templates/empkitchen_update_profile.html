@@ -1,0 +1,139 @@
+{% extends 'indexkitchen.html' %}
+{% block body %}
+<body>
+<form action="{% url 'emp_kitchen_update_prof' %}" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <br>
+
+  <center><h4>PROFILE</h4></center>
+  <br>
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+        <th>FIRST NAME </th>
+        <td><label>
+          <input type="text" name="textfield" value="{{val.firstname}}" />
+        </label></td>
+      </tr>
+      <tr>
+        <th>LAST NAME </th>
+        <td><label>
+          <input type="text" name="textfield2" value="{{val.lastname}}" />
+        </label></td>
+      </tr>
+      <tr>
+        <th>HOUSE NAME</th>
+        <td><label>
+          <input type="text" name="textfield3" value="{{val.place}}" required />
+        </label></td>
+      </tr>
+      <tr>
+        <th>STREET</th>
+        <td><label>
+          <input type="text" name="textfield4" value="{{val.street}}" required/>
+        </label></td>
+      </tr>
+      <tr>
+        <th>PINCODE</th>
+        <td><label>
+          <input type="text" name="textfield5" value="{{val.pincode}}" required pattern="[0-9]{6}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <th>CITY</th>
+        <td><label>
+          <input type="text" name="textfield6" value="{{val.city}}" required/>
+        </label></td>
+      </tr>
+      <tr>
+        <th>DISTRICT</th>
+        <td><label>
+          <select name="select" required>
+            <option {% if val.district == "Thiruvananthapuram" %}selected{% endif %}>Thiruvananthapuram</option>
+            <option {% if val.district == "kollam" %}selected{% endif %}>Kollam</option>
+            <option {% if val.district == "Pathanamthitta" %}selected{% endif %}>Pathanamthitta</option>
+            <option {% if val.district == "Alappuzha" %}selected{% endif %}>Alappuzha</option>
+            <option {% if val.district == "Kottayam" %}selected{% endif %}>Kottayam</option>
+            <option {% if val.district == "Idukki" %}selected{% endif %}>Idukki</option>
+            <option {% if val.district == "Ernakulam" %}selected{% endif %}>Ernakulam</option>
+            <option {% if val.district == "Thrissur" %}selected{% endif %}>Thrissur</option>
+            <option {% if val.district == "Palakkad" %}selected{% endif %}>Palakkad</option>
+            <option {% if val.district == "Malapuram" %}selected{% endif %}>Malapuram</option>
+            <option {% if val.district == "Kozhikode" %}selected{% endif %}>Kozhikode</option>
+            <option {% if val.district == "Wayanad" %}selected{% endif %}>Wayanad</option>
+            <option {% if val.district == "Kannur" %}selected{% endif %}>Kannur</option>
+            <option {% if val.district == "Kasaragod" %}selected{% endif %}>Kasaragod</option>
+          </select>
+        </label></td>
+      </tr>
+      <tr>
+        <th>STATE</th>
+        <td><label>
+          <input type="text" name="textfield7" value="{{val.state}}" required />
+        </label></td>
+      </tr>
+      <tr>
+        <th>MOBILE NUMBER </th>
+        <td><label>
+          <input type="text" name="textfield8" value="{{val.phone}}" required pattern="[6789][0-9]{9}" />
+        </label></td>
+      </tr>
+      <tr>
+        <th>GENDER</th>
+        <td><label>
+          <input name="radiobutton" type="radio" value="male" {% if val.gender == "male" %} checked {% endif %}/>
+          MALE
+          <input name="radiobutton" type="radio" value="female"  {% if val.gender == "female" %} checked {% endif %}/>
+          FEMALE
+          <input name="radiobutton" type="radio" value="transgenders" {% if val.gender == "transgenders" %} checked {% endif %}/>
+          TRANSGENDERS</label></td>
+      </tr>
+      <tr>
+        <th>DOB</th>
+        <td><label>
+          {{val.dob}}
+        </label></td>
+      </tr>
+      <tr>
+        <th>ADHAR NUMBER </th>
+        <td><label>
+          <input type="text" name="textfield14" value="{{val.adarnumber}}" required pattern="[0-9]{12}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <th>SALARY</th>
+        <td><label>
+          {{val.salary}}
+        </label></td>
+      </tr>
+      <tr>
+        <th>EMPLOYEE TYPE </th>
+        <td><label>
+          {{val.emptype}}
+
+        </label></td>
+      </tr>
+      <tr>
+        <th>JOB TITLE </th>
+        <td><label>
+             {{val.jobtitle}}
+        </label></td>
+      </tr>
+      <tr>
+        <th>PHOTO</th>
+        <td><label>
+          <input type="file" name="file" /><img src="{{val.photo.url}}" height="100" width="100"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><label>
+          <input type="submit" name="Submit" value="Update"  class="btn btn-primary"/>
+        </label></td>
+      </tr>
+    </table>
+    <label></label>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

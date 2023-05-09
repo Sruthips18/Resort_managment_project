@@ -1,0 +1,33 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'view_rooms' %}">
+  <br>
+      <center><h4>Users Food Payment Status</h4></center>
+<br>
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+
+        <th scope="col">User Name</th>
+        <th scope="col">Book Date</th>
+        <th scope=""> Bill Status</th>
+        <th scope="col"> Total Amount</th>
+      </tr>
+
+      <tr>
+        {% for i in val %}
+
+        <td>{{i.user_id.firstname}} {{i.user_id.lastname}}</td>
+        <td>{{i.book_date}}</td>
+        <td> {{i.status}}</td>
+        <td> {{i.total_amount}}</td>
+      </tr>
+      {% endfor %}
+      </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

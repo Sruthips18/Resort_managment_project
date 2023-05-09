@@ -1,0 +1,43 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="add_cott">
+  <center><h4>Add New Cottages</h4></center>
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+        <th scope="row">Cottage Number </th>
+        <td><label>
+          <input type="text" name="textfield" required/>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">Cottage Details </th>
+        <td><label>
+          <textarea name="textarea" required></textarea>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">Number of Rooms </th>
+        <td><label>
+          <input type="text" name="textfield2" required/>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">Facilities</th>
+        <td><label>
+          <textarea name="textarea2" required></textarea>
+        </label></td>
+      </tr>
+      <tr>
+        <td colspan="2" scope="row"><label>
+          <input type="submit" name="Submit" value="ADD" class="btn btn-primary"/>
+        </label></td>
+      </tr>
+      </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

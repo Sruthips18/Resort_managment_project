@@ -1,0 +1,76 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'add_package_booking' %}">
+  <div align="center">
+    <table width="200" border="1">
+      <tr>
+        <th scope="row">NAME</th>
+        <td><label>
+          {{uob.firstname}} {{uob.lastname}}
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">PHONE</th>
+        <td><label>
+          {{uob.phone}}
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">EMAIL</th>
+        <td><label>
+          {{uob.email}}
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row"> PACKAGES </th>
+        <td><label>
+           <select name="select">
+            {% for i in val %}
+            <option value="{{i.id}}">{{i.pack_name}}</option>
+            {% endfor %}
+          </select>
+        </label></td>
+      </tr>
+       <tr>
+        <th scope="row">NUMBER OF PERSONS </th>
+        <td><label>
+          <input type="text" name="textfield5" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">NUMBER OF CHILDREN </th>
+        <td><label>
+          <input type="text" name="textfield6" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">NUMBER OF ADULTS </th>
+        <td><label>
+          <input type="text" name="textfield7" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">DATE OF ARRIVAL </th>
+        <td><label>
+          <input type="date" name="textfield8" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">DATE OF VACCATE </th>
+        <td><label>
+          <input type="date" name="textfield9" />
+        </label></td>
+      </tr>
+      <tr>
+        <th colspan="2" scope="row"><label>
+          <input type="submit" name="Submit" value="BOOK" />
+        </label></th>
+      </tr>
+      </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

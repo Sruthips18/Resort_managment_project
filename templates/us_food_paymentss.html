@@ -1,0 +1,40 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'user_payments' %}">
+  <BR>
+  <br>
+  <center><h4> PAY NOW </h4></center>
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+        <th scope="col">Item Name </th>
+        <th scope="col">Photo</th>
+        <th scope="col"><p>Quantity</p>
+        <p>Ordered </p></th>
+        <th scope="col">Amount</th>
+      </tr>
+
+      {% for i in val %}
+      <tr>
+        <td>{{i.menu_id.item_name}}</td>
+        <td><img src="{{i.menu_id.photo.url}}" width="150" height="100"></td>
+        <td>{{i.quantity}}</td>
+        <td>{{i.menu_id.rate}}</td>
+      </tr>
+      {% endfor %}
+      <tr align="center"  >
+        <td colspan="5" align="center"><h4><center><font color="black" style="background-color:#FFF000;size:60;"> <b>Total Amount : {{tot}} /- </b></font></center></h4></td>
+      </tr>
+
+      </table>
+  </div>
+  <br>
+  <div align="center">
+            <input type="submit" name="Submit" value="PAY NOW" class="btn btn-danger" />
+          </div>
+</form>
+</body>
+</html>
+{% endblock %}

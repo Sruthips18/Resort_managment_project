@@ -1,0 +1,36 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <br>
+  <br>
+      <center><h4> Booking Details</h4></center>
+
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+        <th scope="col"><p>Booking</p>
+        <p>details</p></th>
+         <th scope="col">Room details</th>
+        <th scope="col">Package details</th>
+        <th scope="col">Date</th>
+
+
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>Facilities: {{i.facilities_id.faci_name}},
+          <p>No_of_Persons : {{i.number_of_persn}},</p> <p>Date Arrival: {{i.date_arrival}}<p> Date Vaccate: {{i.date_vaccate}}</p></p></td>
+        <td>{{i.room_id.room_number}}<img src="{{i.room_id.photo.url}}" width="150" height="150"></td>
+        <td>{{i.package_id.pack_name}},<img src="{{i.package_id.photo.url}}" width="150" height="150"></td>
+        <td>{{i.booking_date}}</td>
+
+      </tr>
+      {% endfor %}
+      </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

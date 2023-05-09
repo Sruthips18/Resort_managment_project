@@ -1,0 +1,29 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+      <center><h4> View Facilities</h4></center>
+
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+        <th scope="col">FACILITY NAME </th>
+        <th scope="col">DESCRIPTION</th>
+        <th scope="col">RATE</th>
+      </tr>
+      {% for i in val %}
+      {% if i.rate != 0 %}
+      <tr>
+        <td>&nbsp;{{i.faci_name}}</td>
+        <td>&nbsp;{{i.desc}}</td>
+        <td>&nbsp;{{i.rate}}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

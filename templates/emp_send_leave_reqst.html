@@ -1,0 +1,44 @@
+{% extends 'indexkitchen.html' %}
+{% block body %}
+
+<body>
+<form action="send_leave_request" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <center><h4>Send leave Request</h4></center>
+  <div align="center">
+    <table width="200" border="1" id="customers">
+     <tr>
+        <th scope="row"> Reason for Leave </th>
+        <td><label>
+          <textarea name="textarea"></textarea>
+        </label></td>
+      </tr>
+      <tr>
+        <th>From date</th>
+        <td><label>
+          <input type="date" name="textfield" />
+        </label></td>
+      </tr>
+        <tr>
+        <th>To date</th>
+        <td><label>
+          <input type="date" name="textfield1" />
+        </label></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><label>
+          <input type="submit" name="Submit" value="send" CLASS="btn btn-primary"/>
+        </label></td>
+      </tr>
+      </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

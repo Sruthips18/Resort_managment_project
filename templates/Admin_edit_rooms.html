@@ -1,0 +1,71 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'update_room' %}" enctype="multipart/form-data">
+      <center><h4>Edit Room details</h4></center>
+
+  <div align="center">
+    <table width="200" border="1" id="customers">
+     <tr>
+        <th>COTTAGE NUMBER </th>
+        <td><label>
+        <select name="select1">
+          {% for i in val1 %}
+            <option value="{{i.id}}">{{i.cottage_num}}</option>
+          {% endfor %}
+        </select></label></td></tr>
+      <tr>
+        <th>ROOM NUMBER </th>
+        <td><label>
+          <input type="text" name="textfield2" value="{{val.room_number}}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <th>NUMBER OF PERSONS </th>
+        <td><label>
+          <input type="text" name="textfield3" value="{{val.number_of_persons}}" />
+        </label></td>
+      </tr>
+      <tr>
+        <th>PHOTO</th>
+        <td><label>
+          <input type="file" name="file" /><img src="{{val.photo.url}}"height="100" width="100"/>
+        </label></td>
+      </tr>
+      <tr>
+        <th>ROOM FACILITIES </th>
+        <td><label>
+          <select name="select">
+            <option{% if val.room_facility == "AC ROOM" %} selected{% endif %}>AC ROOM</option>
+            <option{% if val.room_facility == "FAMILY COT BED" %} selected{% endif %}>FAMILY COT BED</option>
+            <option{% if val.room_facility == "SINGLE COT BED" %} selected{% endif %}>SINGLE COT BED</option>
+            <option{% if val.room_facility == "DOUBLE COT BED" %} selected{% endif %}>DOUBLE COT BED</option>
+            <option{% if val.room_facility == "SWIMMING POOL" %} selected{% endif %}>SWIMMING POOL</option>
+          </select>
+        </label></td>
+      </tr>
+      <tr>
+        <th>DESCRIPTION</th>
+        <td><label>
+          <textarea name="textarea">{{val.description}}</textarea>
+        </label></td>
+      </tr>
+      <tr>
+        <th>RATE</th>
+        <td><label>
+          <input type="text" name="textfield4" value="{{val.rate}}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><label>
+          <input type="submit" name="Submit" value="Updates" class="btn btn-primary"/>
+        </label></td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

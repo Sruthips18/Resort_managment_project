@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/loginbtn">
+  <br>
+  <br>
+  <br>
+  <center><h4>Login Here....</h4></center>
+
+  <div align="center">
+    <table width="200" border="0">
+      <tr>
+        <Td></Td>
+        <td><label>
+          <input type="text" name="textfield" class="form-control" required placeholder="USERNAME" style="width:400px;" />
+        </label></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><label>
+          <input type="password" name="textfield2" placeholder="PASSWORD" required class="form-control" style="width:400px;" />
+        </label></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><label>
+          <input type="submit" name="Submit" value="LOGIN" class="btn btn-primary" style="width:400px;" />
+          <a href="registration_user" class="btn btn-warning" style="width:400px;" >User Registration</a>
+
+        </label></td>
+      </tr>
+      </table>
+  </div>
+</form>
+</body>
+{% endblock %}

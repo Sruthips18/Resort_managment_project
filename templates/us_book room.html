@@ -1,0 +1,104 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'add_booking_det' %}">
+  <br><center><h4>Booking</h4></center>
+
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+        <th scope="row">NAME</th>
+        <td><label>
+          {{uob.firstname}} {{uob.lastname}}
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">PHONE</th>
+        <td><label>
+          {{uob.phone}}
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">EMAIL</th>
+        <td><label>
+          {{uob.email}}
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row"> ROOM FACILITY</th>
+        <td><label>
+          <select name="select">
+            <option>FAMILY COT BED</option>
+            <option>SINGLE COT BED</option>
+            <option>DOUBLE COT BED</option>
+            <option>SWIMMING POOL</option>
+          </select>
+        </label></td>
+      </tr>
+
+      <tr>
+        <th scope="row"> PACKAGES </th>
+        <td><label>
+           <select name="selectp" required>
+                         <option value="0">Select</option>
+            {% for i in val %}
+            <option value="{{i.id}}">{{i.pack_name}}</option>
+            {% endfor %}
+          </select>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row"> EXTRA FACILITY</th>
+        <td><label>
+          <select name="select" required>
+            <option value="0">Select</option>
+            {% for i in val1 %}
+            <option value="{{i.id}}">{{i.faci_name}}</option>
+            {% endfor %}
+          </select>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">NUMBER OF PERSONS </th>
+        <td><label>
+          <input type="text" name="textfield5" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">NUMBER OF CHILDREN </th>
+        <td><label>
+          <input type="text" name="textfield6" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">NUMBER OF ADULTS </th>
+        <td><label>
+          <input type="text" name="textfield7" />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">DATE OF ARRIVAL </th>
+        <td><label>
+          <input type="date" name="textfield8" required min="{{cdt}}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">DATE OF VACCATE </th>
+        <td><label>
+          <input type="date" name="textfield9" required min="{{cdt}}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td colspan="2" scope="row"><label>
+          <input type="submit" name="Submit" value="BOOK" class="btn btn-primary" />
+        </label></td>
+      </tr>
+      </table>
+    <BR>
+         <input type="submit" name="Submit" value="PRINT" ONCLICK="window.print()" />
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

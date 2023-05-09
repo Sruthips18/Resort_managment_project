@@ -1,0 +1,35 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+    <center><h4>Manage Purchase Details</h4></center>
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+        <th scope="col">EMPLOYEE NAME </th>
+        <th scope="col">TYPE</th>
+        <th scope="col">MATERIAL DETAILS</th>
+        <th scope="col">QUANTITY</th>
+        <th scope="col">EMPLOYEE PHONE </th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{i.emp_id.firstname}} {{i.emp_id.lastname}}</td>
+        <td>&nbsp;{{i.emp_id.emptype}}</td>
+        <td>&nbsp;{{i.material_det}}</td>
+        <td>{{i.quantity}}</td>
+        <td>&nbsp;{{i.emp_id.phone}}</td>
+        {% if i.status == 'pending' %}<td><p><a href="{% url 'approve_purchase_det' id=i.id %}" class="btn btn-success">APPROVE</a></p>
+        <p><a href="{% url 'reject_purchase_det' id=i.id %}" class="btn btn-primary">REJECT</a></p></td>
+        {% else %}<td>{{i.status}}</td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+      </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

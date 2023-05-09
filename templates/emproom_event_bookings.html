@@ -1,0 +1,29 @@
+{% extends 'indexroom.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <br>
+    <center><h4>Event Details</h4></center>
+  <br>
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+        <th scope="col">EVENT NAME </th>
+        <th scope="col">REQUIREMENTS</th>
+        <th scope="col">PHOTO</th>
+        <th scope="col">EVENT DATE</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{i.event_id.event_name}}</td>
+        <td>{{i.requirements}}</td>
+        <td><img src="{{i.event_id.photo.url}}" width="100" height="100"></td>
+        <td>{{i.booking_date}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <center><h4>Approve or Reject Leave Request</h4></center>
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+        <th scope="col">EMPLOYEE NAME </th>
+        <th scope="col">MOBILE NUMBER </th>
+        <th scope="col">DATE</th>
+        <th scope="col">REASON</th>
+        <th scope="col">REQUEST FROM DATE </th>
+        <th scope="col">REQUEST TO DATE</th>
+        <th></th>
+      </tr>
+      {% for i in val %}
+      {% if i.status != 'reject' %}
+      <tr>
+        <td>&nbsp;{{i.employeeid.firstname}} {{i.employeeid.lastname}}</td>
+        <td>&nbsp;{{i.employeeid.phone}}</td>
+        <td>&nbsp;{{i.date}}</td>
+        <td>{{i.reason}}</td>
+        <td>{{i.requestdate}}</td>
+        <td>{{i.todate}}</td>
+         <td>{% if i.status == 'pending' %} <p><a href="{% url 'approve_leave_req' id=i.id %}" class="btn btn-success">APPROVE</a></p>{% else %}<p>{{i.status}}</p> {% endif %}
+       {% if i.status == 'pending' %}  <p><a href="{% url 'reject_leave_req' id=i.id %}" class="btn btn-primary">REJECT</a></p>{% endif %}</td>
+
+
+      </tr>
+{% endif %}
+      {% endfor %}
+      </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}
